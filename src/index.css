@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  --color-enterprise-bg: #f6f7fb;
+  --color-enterprise-sidebar: #ffffff;
+  --color-enterprise-card: #ffffff;
+  --color-enterprise-border: #eef1f6;
+  --color-primary: #d97706;
+  --color-primary-dark: #b45309;
+  --color-accent: #f59e0b;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #2563eb;
+  --shadow-enterprise: 0 6px 22px rgba(15, 23, 42, 0.05);
+  --shadow-enterprise-hover: 0 12px 30px rgba(15, 23, 42, 0.10);
+  --shadow-active: 0 10px 24px -3px rgba(217, 119, 6, 0.45);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: #f6f7fb;
+}
+
+body {
+  background-color: #f6f7fb;
+  color: #334155;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+}
+
+p, span, td, th, label, div, a, li, input, select, textarea, option {
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1e293b;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+input, select, textarea, button {
+  line-height: 1.35;
+}
+
+p, span, td, th, label, div, a, li {
+  line-height: 1.4;
+}
+
+/* Premium Aurora motion */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(14px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes blink { 0%, 50%, 100% { opacity: 1; } 25%, 75% { opacity: 0.35; } }
+
+.animate-fade-in { animation: fadeIn 0.35s ease-out both; }
+.animate-scale-in { animation: scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-slide-in-right { animation: slideInRight 0.25s ease-out both; }
+.animate-blink { animation: blink 1s ease-in-out infinite; }
+
+/* IMAGES - Original resolution, fit in box, NO blur, NO crop */
+img {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  object-fit: contain !important;
+  image-rendering: auto;
+}
+
+img:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ALL ASTERISK/STAR (*) RED - with or without space */
+span[class*="text-orange"],
+span[class*="text-red"],
+span[class*="text-rose"] {
+  font-weight: 900 !important;
+}
+
+*:focus-visible {
+  outline: none;
+}
+
+::selection {
+  background-color: #d97706;
+  color: white;
+}
+
+/* Aurora thin scrollbars */
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #fcd34d; }
+
+[dir="rtl"] {
+  font-family: Arial, Tahoma, sans-serif;
+}
+
+/* Global professional polish for older page markup */
+input::placeholder, textarea::placeholder { color: #94a3b8; }
+input[type="date"], input[type="number"], select { min-width: 0; }
+
+.aurora-section-title {
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #94a3b8;
+}
+
+@media print {
+  body { background-color: white; color: black; }
+  .no-print { display: none !important; }
+}
